@@ -284,6 +284,7 @@ IF(USE_BOEHM_GC)
     # OK we don't want to link this for god sake.
     IF (MSVC OR MINGW)
       ADD_DEFINITIONS("-DDONT_USE_USER32_DLL")
+      SET(CMAKE_USE_WIN32_THREADS_INIT TRUE)
     ENDIF()
 
     # since we are using explicit GC_DLL macro, Boehm GC's unit test can not
